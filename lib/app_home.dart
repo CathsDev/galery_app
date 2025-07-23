@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:galery_app/screens/gallery_screen.dart';
 //import 'package:galery_app/screens/detail_screen.dart';
-import 'package:galery_app/screens/profile_screen.dart';
+// import 'package:galery_app/screens/profile_screen.dart';
 import 'package:galery_app/widgets/gallery_app_bar.dart';
 
 class AppHome extends StatelessWidget {
@@ -11,8 +12,9 @@ class AppHome extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         //appBar: GalleryAppbar(title: 'Details'),
+        // appBar: GalleryAppbar(title: 'MyGallery'),
         appBar: GalleryAppbar(title: 'MyGallery'),
-        body: ProfileScreen(),
+        body: GalleryScreen(),
         bottomNavigationBar: NavigationBar(
           /* onDestinationSelected: (int index) {
             setState(() {
