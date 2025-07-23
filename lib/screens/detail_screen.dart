@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
 class DetailScreen extends StatelessWidget {
-  /* final String title;
-  final String imageUrl; */
-  //const DetailScreen({super.key, required this.title, required this.imageUrl});
   const DetailScreen({super.key});
 
   @override
