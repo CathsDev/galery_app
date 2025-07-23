@@ -1,40 +1,26 @@
 import 'package:flutter/material.dart';
 //import 'package:galery_app/screens/detail_screen.dart';
-import 'package:galery_app/screens/gallery_screen.dart';
 import 'package:galery_app/screens/profile_screen.dart';
+import 'package:galery_app/widgets/gallery_app_bar.dart';
 
-class MainApp extends StatefulWidget {
-  const MainApp({super.key});
-
-  @override
-  State<MainApp> createState() => _MainAppState();
-}
-
-class _MainAppState extends State<MainApp> {
-  int currentPageIndex = 0;
-  List<Widget> screens = [
-    GalleryScreen(),
-    //DetailScreen(title: 'Test', imageUrl: 'test'),
-    ProfileScreen(),
-  ];
+class AppHome extends StatelessWidget {
+  const AppHome({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color.fromRGBO(95, 3, 49, 1),
-          centerTitle: true,
-          title: Text('MyGallery', style: TextStyle(color: Colors.white)),
-        ),
+        //appBar: GalleryAppbar(title: 'Details'),
+        appBar: GalleryAppbar(title: 'MyGallery'),
+        body: ProfileScreen(),
         bottomNavigationBar: NavigationBar(
-          onDestinationSelected: (int index) {
+          /* onDestinationSelected: (int index) {
             setState(() {
               currentPageIndex = index;
             });
-          },
+          }, */
           indicatorColor: const Color.fromARGB(255, 240, 203, 221),
-          selectedIndex: currentPageIndex,
+          //selectedIndex: currentPageIndex,
           destinations: const <Widget>[
             NavigationDestination(
               selectedIcon: Icon(Icons.image),
@@ -48,7 +34,6 @@ class _MainAppState extends State<MainApp> {
             ),
           ],
         ),
-        body: screens[currentPageIndex],
       ),
     );
   }
