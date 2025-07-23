@@ -14,10 +14,7 @@ class GalleryScreen extends StatelessWidget {
         crossAxisSpacing: 8,
         mainAxisSpacing: 8,
         children: galleryData.map((item) {
-          return GalleryCard(
-            imageUrl: item.imagePath,
-            imageText: item.imageTitle,
-          );
+          return GalleryCard(item: item);
         }).toList(),
       ),
     );
